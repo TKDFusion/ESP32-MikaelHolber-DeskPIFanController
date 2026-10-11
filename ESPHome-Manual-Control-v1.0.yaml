@@ -109,6 +109,17 @@ sensor:
     filters:
       - multiply: 0.5  # Depending on how many pulses the fan sends per round - should be 0.5 or 1 - try...
 
+  - platform: pulse_counter
+    pin: 
+      number: GPIO18   # Connect to any input PIN on the ESP
+      mode: INPUT_PULLUP
+    unit_of_measurement: 'RPM'
+    id: fan_4_speed
+    name: Fan Speed 4
+    accuracy_decimals: 0
+    filters:
+      - multiply: 0.5  # Depending on how many pulses the fan sends per round - should be 0.5 or 1 - try...
+      
   - platform: template
     name: "Fan Speed (PWM Voltage)"
     unit_of_measurement: "%"
